@@ -14,3 +14,4 @@
 Z przeprowadzonych analiz ststystycznych można wywnioskować, że w badaniach brały udział zarówno dzieci jak i osoby starsze. Najmłodzsze dziecko miało niecały miesiąc (0,08), natomiast najstarsza badana osoba miała 82 lata. Średnia wieku dla badanej grópy wynosi około 43 lata. Odchylenie standardowe mówiące o rozrzucie danych od wartości średniej wynosi 22.61358. Zaobserwowano również, że rozkład analizowanych danych dotyczących wieku przyjmuje lekką asymetrię lewostronną (około -0,14), co oznacza, że w naszej badanej grópie jest trochę wiecej osób z wiekiem powyżej 43 roku życia. Podczas przeprowadzonych badań, połowa respondentów (50%) była w wieku w przedziale 25 - 61 lat.
 
 ## Wizualizacja danych
+![alt text](https://github.com/Gdyczko/Stroke_analiza_danych_R/blob/main/Number%20of%20people%20by%20employment.png "Rodzaj zatrudnienia")
