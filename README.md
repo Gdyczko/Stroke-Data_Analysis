@@ -3,7 +3,7 @@
 * Dodatkowo przeanalizowano wskaźnik BMI u osób biorących udział w badaniu, w celu sprawdzenia czy miejsce zamieszkania lub rodzaj wykonywanej pracy ma wpływ na poziom tego wskaźnika.
 
 ## Baza danych
-Przedmiotowa baza danych zawiera informację na temat pacjentów i ich problemów zdrowotnych oraz trybu życia. Baza danych składa się z 12 kolumn i 5111 wierszy. Baza została pobrana ze strony ![Kaggle](https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset) i zawiera informację o:
+Przedmiotowa baza danych zawiera informację na temat pacjentów i ich problemów zdrowotnych oraz trybu życia. Baza danych składa się z 12 kolumn i 5111 wierszy. Baza została pobrana ze strony [Kaggle](https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset) i zawiera informację o:
 *    id pacjenta
 *    płci
 *    nadciśnieniu
