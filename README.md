@@ -15,6 +15,7 @@ Przedmiotowa baza danych zawiera informację na temat pacjentów i ich problemó
 *    BMI
 *    jak często pali
 *    czy miał już udar
+
 Pełne informacje na temat zawieranych w poszczególnych kolukmnach danych oraz o ich rodzaju znajdują się w utworoznym [opisie](https://github.com/Gdyczko/Stroke_analiza_danych_R/blob/main/Opis.txt)
 
 ## Czszczenie danych
