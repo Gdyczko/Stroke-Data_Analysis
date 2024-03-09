@@ -3,18 +3,18 @@
 * Dodatkowo przeanalizowano wskaźnik BMI u osób biorących udział w badaniu, w celu sprawdzenia czy miejsce zamieszkania lub rodzaj wykonywanej pracy ma wpływ na poziom tego wskaźnika.
 
 ## Baza danych
-Przedmiotowa baza danych zawiera informację na temat pacjentów i ich problemów zdrowotnych oraz trybu życia. Baza danych składa się z 12 kolumn i 5111 wierszy. Baza została pobrana ze strony ![Kaggle.com](https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset) i zawiera informację o:
-    * id pacjenta
-    * płci
-    * nadciśnieniu
-    * zawale serca
-    * czy był/a kiedykolwiek żonaty/zamężna
-    * rodzaju wykonywanej pracy
-    * miejscu zamieszkania
-    * przeciętym poziomie glukozy
-    * BMI
-    * jak często pali
-    * czy miał już udar
+Przedmiotowa baza danych zawiera informację na temat pacjentów i ich problemów zdrowotnych oraz trybu życia. Baza danych składa się z 12 kolumn i 5111 wierszy. Baza została pobrana ze strony ![Kaggle](https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset) i zawiera informację o:
+*    id pacjenta
+*    płci
+*    nadciśnieniu
+*    zawale serca
+*    czy był/a kiedykolwiek żonaty/zamężna
+*    rodzaju wykonywanej pracy
+*    miejscu zamieszkania
+*    przeciętym poziomie glukozy
+*    BMI
+*    jak często pali
+*    czy miał już udar
 Pełne informacje na temat zawieranych w poszczególnych kolukmnach danych oraz o ich rodzaju znajdują się w utworoznym [opisie](https://github.com/Gdyczko/Stroke_analiza_danych_R/blob/main/Opis.txt)
 
 ## Czszczenie danych
