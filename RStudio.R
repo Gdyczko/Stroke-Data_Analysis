@@ -1,110 +1,91 @@
+# Loading data and checking its structure
 
-
-###############################################
-# Wczytanie danych i sprawdzenie jej struktury
-###############################################
-
-
-# wczytanie tabeli z danymi w formacie csv
+# Loading a table with data in CSV format
 dane <- read.csv("healthcare-dataset-stroke-data.csv")
 
-# podgląd i sprawdzenie struktury danych
+# Previewing and checking the structure of the data
 head(dane)
 str(dane)
 
+# Data cleaning and imputation of missing values
 
-#########################################################
-# czyszczenie danych i uzupełnianie wartości brakujących 
-#########################################################
-
-
-# Sprawdzenie czy występują wartości NA
+# Checking for the presence of NA values
 dane[!complete.cases(dane), ]
 
-############################################################################################
-##                                                                                        ##  
-##  jak widać według zastosowanej funkcji nasze dane nie posiadają wartości brakujący     ##
-##  NA jednakże należey zauwacyć, chociażby widać to przy funkcji str() mamy wartości     ##
-##  NA w kolumnie bmi ale ze względu na zapis "N/A" program R, czyta to jako tekst a nie  ##
-##  wartość brakującą                                                                     ##
-##                                                                                        ##
-############################################################################################
+# As can be seen from the applied function, our data does not have missing values NA. 
+# However, it should be noted that, although it is visible when using the str() function,
+# we have NA values in the bmi column, but due to the entry "N/A," the R program
+# interprets it as text rather than a missing value.
 
-# wylistowanie wartości "N/A"
+
+# Listing values of "N/A"
 dane[dane == "N/A"]
 
-# zamiana wartości "N/A" na NA
+# Replacing values of "N/A" with NA
 dane[dane == "N/A"] <- NA
 
-# sprawdzenie ponownie czy są wartości NA
+# Checking again for the presence of NA values
 dane[!complete.cases(dane), ]
 
-# sprawdzenie ponownie struktury danych
+# Checking the data structure again
 str(dane)
 
-# zamiana klasy danych bmi z typu character na numeric
+# Converting the data class of the bmi variable from character to numeric
 dane$bmi <- as.numeric(dane$bmi)
 
-# sprawdzenie średniej i mediany z pominięciem wartości NA
+# Checking the mean and median with NA values excluded
 mean(dane$bmi, na.rm = TRUE)
 median(dane$bmi, na.rm = TRUE)
 
-# uzupełnienie wartości NA medianą
+# Imputing NA values with the median
 dane$bmi[is.na(dane$bmi)] <- median(dane$bmi, na.rm = TRUE)
 
-# sprawdzenie jak teraz wygladają dane z kolumny bmi podsumowane
+# Checking the summary of the bmi column data now
 summary(dane$bmi)
 
-# sprawdzenie jeszcze raz czy nie ma wartości barkujących
+# Checking once again for any missing values
 dane[!complete.cases(dane), ]
 
-# usunięcie nic nie wnoszącej do naszej analizy komórki z numerami ID
+# Removing cells with ID numbers that do not contribute to our analysis
 head(dane[,-1]) # sprawdzenie czy wszystko się zgadza 
 dane <- dane[, -1] # nadpisanie danych z pominięciem kolumny pierwszej "ID"
 
 
-#################################
-# korygowanie formatów zmiennych
-#################################
-
+# Correcting variable formats
 
 # gender #
 
-# sprawdzenie poprawności zapisu danych jako factor
+# Checking the correctness of data encoding as factors
 summary(factor(dane$gender)) 
 
-##############################################################################
-##  jest jedna wartość "other" którą należy nie brać do analiz pod uwagę,   ##
-##  zbiór jest duży, więc jej brak, nie wpłynie w znaczący sosób na zmianę  ##
-##  otrzymanych wyników                                                     ##
-##############################################################################
+# There is one value "other" that should not be considered in the analysis.
+# Since the dataset is large, its absence will not significantly affect the
+# obtained results.                                                      
 
-# podpatrzenie danej, która w kolumnie gender posiada wartość "Other"
+
+# Observing the record(s) where the gender column has the value "Other"
 dane[dane$gender == "Other", ]
 
-# zapisanie danych bez całego wiersza zawierającego w kolumnie gender wartość "Other"
+# Saving the data without the entire row containing the value "Other" in the gender column
 dane <- dane[!dane$gender == "Other", ]
 
-# ponowne sprawdzenie poprawności zapisu danych jako factor
+# Rechecking the correctness of data encoding as factors
 summary(factor(dane$gender))
 
-# przekształcenie danych z kolumny gender na typ factor
+# Transforming data from the gender column into a factor type
 dane$gender <- factor(dane$gender)
 
-# sprawdzenie poprawności zapisu danych i ich nadpisania
+# Checking the correctness of data encoding and overwriting it
 summary(dane$gender)
-
 
 # hypertension, heart_disease i stroke #
 
-####################################################################################
-##  mamy trzy zmienne binarne, które zostały zapisane w postaci 0 i 1 gdzie       ##
-##  0 oznacza nie, natomiast 1 tak. W związku z tym, że te trzy zmienne posiadają ##
-##  takie same dane (0 lub 1) możemy je zautomatyzować i wszytskie na raz         ##
-##  przekształcić na typ factor i nadać im etykiety "No" i "Yes"                  ##
-####################################################################################
+# We have three binary variables, which have been encoded as 0 and 1, where
+# 0 represents "No" and 1 represents "Yes". Since these three variables have
+# the same data (0 or 1), we can automate the process and convert all of them
+# at once into a factor type and assign labels "No" and "Yes".
 
-# utworzenie wektora z danymi binarnymi, które są do zmiany
+# Creating a vector with binary data that needs to be changed
 zmienneBinarne <- c("hypertension", "heart_disease", "stroke")
 
 # podgląd podusmowanych danych - trzech na raz
